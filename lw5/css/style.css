@@ -1,12 +1,58 @@
-.photo
+.body
+{
+    margin: 0;
+}
+
+.all
+{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.quote-box-photo
 {
     background-image: url(C:/Web/exmpl/images/Jane.png);
     background-size: 100%;
-    float: left;
-    margin: -50px 0px 0px 471px;
     width: 330px;
     height: 350px;
-    z-index: 31;
+    float: left;
+    margin: 100px 0 44px 0px; 
+}
+
+.quote-box-quote
+{
+    float: right;
+    background-image: url(C:/Web/exmpl/images/quotes.png);
+    background-repeat: no-repeat;
+    margin: 150px 101px 0px 0px;
+}
+
+.quote-box__text
+{
+    font-size: 28px;
+    line-height: 42px;
+    color: #848484;
+    font-style: italic;
+    font-family: "Georgia";
+    text-align: left;
+    margin: 70px 6px 2px 60px;
+}
+
+.quote-box__copyright
+{
+    font-size: 16px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 600;
+    font-family: "Open Sans";
+    text-align: left;
+    margin: 0px 0px 0px 63px;
+}
+
+.quote-box::after 
+{
+    content: "";
+    clear: both;
+    display: block;
 }
 
 .interests
@@ -14,135 +60,91 @@
     float: left;
 }
 
-.title-writers
+.interests-title-writers
 {
     font-size: 24px;
     font-weight: 600;
-    font-family: "Open Sans", sans-serif; 
+    font-family: "Open Sans"; 
     color: #15a98c;
     line-height: 1.333;
-    text-align: left;
-    
-    margin: 45px 0px 0px 472px;
-    z-index: 21;
+    text-align: left;  
+    margin: 0px 0px 14px 0px;
 }
 
-.list-authors
+.interests-list-authors
 {
-    width: 330px;
-    height: 260px;
     font-size: 19px;
     line-height: 36px;
     color: #555555;
     font-family: "Georgia";
-    text-align: left;
-    
-    margin: 13px 0px 0px 453px;
-    z-index: 20;
+    text-align: left;   
+    margin: 0px 0px 42px 0px;
+    padding-left: 21px;
 }
 
-.title-films
+.interests__list-line__trumen
+{
+    margin-left: -2px;  
+}
+.interests-title-films
 {
     font-size: 24px;
     line-height: 32px;
     color: #15a98c;
     font-weight: 600;
     font-family: "Open Sans";
-    text-align: left;
-    
-    margin: -74px 0px 0px 472px;
-    z-index: 19;    
+    text-align: left;  
+    margin: 0px 0px 11px 0px;  
 }
 
-.list-films
+.interests-list-films
 {
-    width: 330px;
-    height: 260px;
     font-size: 19px;
     line-height: 36px;
     color: #555555;
     font-family: "Georgia";
-    text-align: left;
-    
-    margin: 11px 0px 0px 452px;
-    z-index: 18;
+    text-align: left;   
+    margin: 0px 0px 0px 0px;
+    padding-left: 20px;
 }
 
-.quotation-marks
+.main-text
 {
-    background-image: url(C:/Web/exmpl/images/quotes.png);
-    margin: 150px 0px 20px 861px;
-    width: 130px;
-    height: 87px;
-    z-index: 3;     
+    float:right;
 }
 
-.quote
+.main-text__name
 {
-    width: 450px;
-    height: 130px;
-    font-size: 28px;
-    line-height: 42px;
-    color: #848484;
-    font-style: italic;
-    font-family: "Georgia";
-    text-align: left;
-    margin: -38px 0px 0px 922px;
-    z-index: 4;
-}
-
-.copyright
-{
-    width: 400px;
-    font-size: 16px;
-    line-height: 42px;
-    color: #333333;
-    font-weight: 600;
-    font-family: "Open Sans";
-    text-align: left;
-    margin: -44px 0px 0px 925px;
-    z-index: 5;
-}
-
-.name
-{
-    width: 216px;
     font-size: 48px;
     line-height: 42px;
     color: #333333;
     font-weight: 700;
     font-family: "Open Sans";
     text-align: left;
-    margin: 45px 0px -63px 866px;
-    z-index: 15;
+    margin: 0px 0px 33px 6px;
 }
 
-.stripe
+.main-text__stripe
 {
     background-color: #45c3aa;
-    position: absolute;
     width: 60px;
     height: 6px;
-    z-index: 14;
     border-radius: 3px;  
-    margin: 93px 0px 0px 39px;
+    margin: 0px 0px 43px 2px;
+    display: block;
 }
 
-.text
+.main-text__text
 {
     font-size: 19px;
     font-family: "Georgia";
     color: #555555;
     line-height: 32px;
     text-align: left;
-    margin: 144px -256px -0px 39px;
-    width: 508px;
-    height: 178px;
-    z-index: 13;
-    float: right;
+    margin: 0px 0px 42px 2px;
 }
 
-.title-hobby
+.main-text__title-hobby
 {
     font-size: 36px;
     line-height: 42px;
@@ -150,43 +152,37 @@
     font-weight: 400;
     font-family: "Open Sans";
     text-align: left;
-    margin: 378px 0px -345px 860px;
-    z-index: 12;
+    margin: 0px 422px 16px 0px;
 }
 
-.hobby
+.main-text__hobby
 {
-    width: 561px;
-    height: 198px;
     font-size: 19px;
     line-height: 32px;
     color: #555555;
     font-family: "Georgia";
     text-align: left;
-    margin: 361px 0px 3px 862px;
-    z-index: 9;
+    margin: 0px 0px 41px 2px;
 }
 
-.link
+.main-text-link
 {
-    width: 562px;
-    height: 263px;
     font-size: 19px;
     line-height: 32px;
     color: #15a98b;
     font-family: "Georgia";
     text-decoration: none;
     text-align: left;
-    margin: 0px 0px 0px 862px;
-    z-index: 10;
+    margin: 0px 0px 0px 2px;
 }
 
-.link__decoration
+.main-text__decoration
 {
     color: #15a98b;
     text-decoration: underline;
 }
-.link::after
+
+.main-text-link::after
 {
     content: "→";
 }
