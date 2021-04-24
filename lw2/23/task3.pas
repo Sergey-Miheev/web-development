@@ -8,16 +8,16 @@ BEGIN
   QuerStr := GetEnv('QUERY_STRING');
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  Position := Pos('name', QuerStr);
+  Position := Pos('name=', QuerStr);
   AmperPosition := Pos('&', QuerStr);
   IF (Position <> 0)
   THEN
     IF (AmperPosition <> 0)
     THEN
-      BEGIN 
-        NameOfUser := Copy(QuerStr, Position + 5, AmperPosition);
+      BEGIN
+        NameOfUser := Copy(QuerStr, Position + 5, AmperPosition - 6);
         WRITELN('Hello dear, ', NameOfUser, '!')
-      END  
+      END
     ELSE
       BEGIN
         NameOfUser := Copy(QuerStr, Position + 5, Length(QuerStr) - 5);
