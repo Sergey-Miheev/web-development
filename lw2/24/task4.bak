@@ -1,0 +1,29 @@
+PROGRAM WorkWithQueryString(INPUT, OUTPUT);
+USES
+  DOS;
+VAR
+  QueryString: String;
+FUNCTION GetQueryStringParameter(Key: String): String;
+VAR
+  BeginningofName, Position, AmperPosition: LongInt;
+BEGIN
+  QueryString := GetEnv('QUERY_STRING');
+  WRITELN('Content-Type: text/plain');
+  WRITELN;
+  Position := Pos(Key, QueryString);
+  IF Position <> 0
+  THEN
+    BEGIN
+      BeginningofName := Pos('=', QueryString);
+      QueryString := Delete(QueryString, 0, BeginningofName - 1);
+      AmperPosition := Pos('&', QueryString);
+      GetQueryStringParameter := Copy(QueryString, 0, AmperPosition)
+    END
+  ELSE
+    GetQueryStringParameter := ('Parameter not found');
+END;
+BEGIN {WorkWithQueryString}
+  WRITELN('First Name: ', GetQueryStringParameter('first_name'));
+  WRITELN('Last Name: ', GetQueryStringParameter('last_name'));
+  WRITELN('Age: ', GetQueryStringParameter('age'))
+END. {WorkWithQueryString}
