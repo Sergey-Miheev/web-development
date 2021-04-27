@@ -3,14 +3,14 @@
     margin: 0;
 }
 
-.all
+.page
 {
     max-width: 1000px;
     margin: 0 auto;
 }
 .quote-box-photo
 {
-    background-image: url(C:/Web/exmpl/images/Jane.png);
+    background-image: url(../images/Jane.png);
     background-size: 100%;
     width: 330px;
     height: 350px;
@@ -21,7 +21,7 @@
 .quote-box-quote
 {
     float: right;
-    background-image: url(C:/Web/exmpl/images/quotes.png);
+    background-image: url(../images/quotes.png);
     background-repeat: no-repeat;
     margin: 150px 101px 0px 0px;
 }
