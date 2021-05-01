@@ -8,17 +8,17 @@
     max-width: 1000px;
     margin: 0 auto;
 }
-.quote-box-photo
+.quote-box__photo
 {
     background-image: url(../images/Jane.png);
     background-size: 100%;
     width: 330px;
     height: 350px;
     float: left;
-    margin: 100px 0 44px 0px; 
+    margin: 100px 0 45px 0px; 
 }
 
-.quote-box-quote
+.quote-box__quote
 {
     float: right;
     background-image: url(../images/quotes.png);
@@ -60,24 +60,33 @@
     float: left;
 }
 
-.interests-title-writers
+
+.interests__title
 {
     font-size: 24px;
-    font-weight: 600;
-    font-family: "Open Sans"; 
+    line-height: 32px;
     color: #15a98c;
-    line-height: 1.333;
-    text-align: left;  
-    margin: 0px 0px 14px 0px;
+    font-weight: 600;
+    font-family: "Open Sans";
+    text-align: left;
 }
 
-.interests-list-authors
+.interests__title_writers
+{
+    margin: 0px 0px 13px 0px;
+}
+
+.interests__list
 {
     font-size: 19px;
     line-height: 36px;
     color: #555555;
     font-family: "Georgia";
     text-align: left;   
+}
+
+.interests__list_writers
+{
     margin: 0px 0px 42px 0px;
     padding-left: 21px;
 }
@@ -86,31 +95,21 @@
 {
     margin-left: -2px;  
 }
-.interests-title-films
+
+.interests__title_films
 {
-    font-size: 24px;
-    line-height: 32px;
-    color: #15a98c;
-    font-weight: 600;
-    font-family: "Open Sans";
-    text-align: left;  
     margin: 0px 0px 11px 0px;  
 }
 
-.interests-list-films
+.interests__list_films
 {
-    font-size: 19px;
-    line-height: 36px;
-    color: #555555;
-    font-family: "Georgia";
-    text-align: left;   
     margin: 0px 0px 0px 0px;
     padding-left: 20px;
 }
 
 .main-text
 {
-    float:right;
+    float: right;
 }
 
 .main-text__name
@@ -121,7 +120,7 @@
     font-weight: 700;
     font-family: "Open Sans";
     text-align: left;
-    margin: 0px 0px 33px 6px;
+    margin: 0px 0px 32px 6px;
 }
 
 .main-text__stripe
@@ -141,6 +140,9 @@
     color: #555555;
     line-height: 32px;
     text-align: left;
+}
+.main-text__text_paragraph
+{
     margin: 0px 0px 42px 2px;
 }
 
@@ -155,36 +157,25 @@
     margin: 0px 422px 16px 0px;
 }
 
-.main-text__hobby
+.main-text__text_hobby
 {
-    font-size: 19px;
-    line-height: 32px;
-    color: #555555;
-    font-family: "Georgia";
-    text-align: left;
     margin: 0px 0px 41px 2px;
 }
 
-.main-text-link
+.main-text__text_link-box
 {
-    font-size: 19px;
-    line-height: 32px;
     color: #15a98b;
-    font-family: "Georgia";
     text-decoration: none;
-    text-align: left;
+}
+.main-text__link
+{
+    text-decoration: underline;
     margin: 0px 0px 0px 2px;
 }
 
-.main-text__decoration
+.main-text__arrow
 {
-    color: #15a98b;
-    text-decoration: underline;
-}
-
-.main-text-link::after
-{
-    content: "→";
+    text-decoration: none;
 }
 
 .clear
