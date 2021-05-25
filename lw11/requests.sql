@@ -1,3 +1,6 @@
+CREATE DATABASE university;  
+
+
 CREATE TABLE students
 (
     id_student INT AUTO_INCREMENT NOT NULL,
@@ -10,6 +13,8 @@ CREATE TABLE students
   COLLATE `utf8mb4_unicode_ci`
   ENGINE = InnoDB
 ;
+
+
 INSERT INTO students SET first_name = 'Кирилл', last_name = 'Санников', age = '20', group_id = '1';
 
 INSERT INTO students SET first_name = 'Ирина', last_name = 'Коскина', age = '19', group_id = '1';
@@ -112,6 +117,7 @@ CREATE TABLE groups
   ENGINE = InnoDB
 ;
 
+
 INSERT INTO groups SET name = '1', faculty_id = '1';
 
 INSERT INTO groups SET name = '2', faculty_id = '1';
@@ -130,6 +136,7 @@ INSERT INTO groups SET name = '8', faculty_id = '3';
 
 INSERT INTO groups SET name = '9', faculty_id = '3';
 
+
 CREATE TABLE faculties
 (
     faculty_id INT AUTO_INCREMENT NOT NULL,
@@ -139,6 +146,13 @@ CREATE TABLE faculties
   COLLATE `utf8mb4_unicode_ci`
   ENGINE = InnoDB
 ;
+
+
+INSERT INTO faculties name = 'ФИиВТ';
+
+INSERT INTO faculties name = 'ЭФ';
+
+INSERT INTO faculties name = 'РТФ';
 
 
 (1)
