@@ -1,191 +1,160 @@
+Создаём базу данных:
 CREATE DATABASE university;  
 
 
-CREATE TABLE students
+Создаём таблицу студенты:
+CREATE TABLE student
 (
-    id_student INT AUTO_INCREMENT NOT NULL,
+    student_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(44) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     age VARCHAR(3) NOT NULL,
-    group_id VARCHAR(15) NOT NULL,
-    PRIMARY KEY (id_student)
+    group_id INT NOT NULL,
+    FOREIGN KEY (group_id) REFERENCES study_group(group_id) ON DELETE CASCADE
 ) DEFAULT CHARACTER SET utf8mb4
   COLLATE `utf8mb4_unicode_ci`
   ENGINE = InnoDB
 ;
 
 
-INSERT INTO students SET first_name = 'Кирилл', last_name = 'Санников', age = '20', group_id = '1';
-
-INSERT INTO students SET first_name = 'Ирина', last_name = 'Коскина', age = '19', group_id = '1';
-
-INSERT INTO students SET first_name = 'Дарья', last_name = 'Фищенко', age = '20', group_id = '1';
-
-INSERT INTO students SET first_name = 'Адександр', last_name = 'Милютин', age = '18', group_id = '1';
-
-INSERT INTO students SET first_name = 'Артём', last_name = 'Хорошавин', age = '20', group_id = '1';
-
-INSERT INTO students SET first_name = 'Алексей', last_name = 'Лебедев', age = '19', group_id = '2';
-
-INSERT INTO students SET first_name = 'Александра', last_name = 'Садова', age = '19', group_id = '2';
-
-INSERT INTO students SET first_name = 'Дмитрий', last_name = 'Карташов', age = '20', group_id = '2';
-
-INSERT INTO students SET first_name = 'Марина', last_name = 'Макарова', age = '19', group_id = '2';
-
-INSERT INTO students SET first_name = 'Александр', last_name = 'Прохоров', age = '18', group_id = '2';
-
-INSERT INTO students SET first_name = 'Анастасия', last_name = 'Седёлкина', age = '19', group_id = '3';
-
-INSERT INTO students SET first_name = 'Никита', last_name = 'Лобанов', age = '18', group_id = '3';
-
-INSERT INTO students SET first_name = 'Александр', last_name = 'Жулин', age = '18', group_id = '3';
-
-INSERT INTO students SET first_name = 'Максим', last_name = 'Романов', age = '19', group_id = '3';
-
-INSERT INTO students SET first_name = 'Степан', last_name = 'Королёв', age = '19', group_id = '3';
-
-INSERT INTO students SET first_name = 'Елизавета', last_name = 'Киселёва', age = '18', group_id = '4';
-
-INSERT INTO students SET first_name = 'Роман', last_name = 'Нефёдов', age = '21', group_id = '4';
-
-INSERT INTO students SET first_name = 'Иван', last_name = 'Макаров', age = '18', group_id = '4';
-
-INSERT INTO students SET first_name = 'Сергей', last_name = 'Михеев', age = '18', group_id = '4';
-
-INSERT INTO students SET first_name = 'Денис', last_name = 'Юрьев', age = '19', group_id = '4';
-
-INSERT INTO students SET first_name = 'Иван', last_name = 'Пакшин', age = '18', group_id = '5';
-
-INSERT INTO students SET first_name = 'Кирилл', last_name = 'Осокин', age = '19', group_id = '5';
-
-INSERT INTO students SET first_name = 'Даниил', last_name = 'Заболотских', age = '18', group_id = '5';
-
-INSERT INTO students SET first_name = 'Александр', last_name = 'Шумков', age = '19', group_id = '5';
-
-INSERT INTO students SET first_name = 'Фирдавси', last_name = 'Нуров', age = '18', group_id = '5';
-
-INSERT INTO students SET first_name = 'Владимир', last_name = 'Ласточкин', age = '18', group_id = '6';
-
-INSERT INTO students SET first_name = 'Даниил', last_name = 'Ясновский', age = '19', group_id = '6';
-
-INSERT INTO students SET first_name = 'Александр', last_name = 'Мустафин', age = '18', group_id = '6';
-
-INSERT INTO students SET first_name = 'Николай', last_name = 'Суманеев', age = '19', group_id = '6';
-
-INSERT INTO students SET first_name = 'Николай', last_name = 'Кузнецов', age = '18', group_id = '6';
-
-INSERT INTO students SET first_name = 'Лев', last_name = 'Виноградов', age = '19', group_id = '7';
-
-INSERT INTO students SET first_name = 'Анастасия', last_name = 'Новикова', age = '18', group_id = '7';
-
-INSERT INTO students SET first_name = 'Даниил', last_name = 'Царегородцев', age = '19', group_id = '7';
-
-INSERT INTO students SET first_name = 'Дмитрий', last_name = 'Апакаев', age = '18', group_id = '7';
-
-INSERT INTO students SET first_name = 'Андрей', last_name = 'Иванов', age = '20', group_id = '7';
-
-INSERT INTO students SET first_name = 'Антон', last_name = 'Герасимов', age = '19', group_id = '8';
-
-INSERT INTO students SET first_name = 'Глеб', last_name = 'Модин', age = '18', group_id = '8';
-
-INSERT INTO students SET first_name = 'Ильсаф', last_name = 'Хасанов', age = '20', group_id = '8';
-
-INSERT INTO students SET first_name = 'Дмитрий', last_name = 'Гриничев', age = '20', group_id = '8';
-
-INSERT INTO students SET first_name = 'Дмитрий', last_name = 'Андреев', age = '18', group_id = '8';
-
-INSERT INTO students SET first_name = 'Анастасия', last_name = 'Куликова', age = '19', group_id = '9';
-
-INSERT INTO students SET first_name = 'Хератхнаяк', last_name = 'Нисансала', age = '24', group_id = '9';
-
-INSERT INTO students SET first_name = 'Раджапакша', last_name = 'Пубуду', age = '25', group_id = '9';
-
-INSERT INTO students SET first_name = 'Константин', last_name = 'Андреев', age = '18', group_id = '9';
-
-INSERT INTO students SET first_name = 'Анастасия', last_name = 'Антропова', age = '19', group_id = '9';
-
-
-CREATE TABLE groups
+Заполняем таблицу данными о студентах:
+INSERT INTO student(first_name, last_name, age, group_id)
+VALUES ('Кирилл', 'Санников', '20', 1),
+       ('Ирина', 'Коскина', '19', 1),
+       ('Дарья', 'Фищенко', '20', 1),
+       ('Александр', 'Милютин', '18', 1),
+       ('Артём', 'Хорошавин', '20', 1),
+       ('Алексей', 'Лебедев', '19', 2),
+       ('Александра', 'Садова', '19', 2),
+       ('Дмитрий', 'Карташов', '20', 2),
+       ('Марина', 'Макарова', '19', 2),
+       ('Александр', 'Прохоров', '18', 2),
+       ('Анастасия', 'Седёлкина', '19', 3),
+       ('Никита', 'Лобанов', '18', 3),
+       ('Александр', 'Жулин', '18', 3),
+       ('Максим', 'Романов', '19', 3),
+       ('Степан', 'Королёв', '19', 3),
+       ('Елизавета', 'Киселёва', '18', 4),
+       ('Роман', 'Нефёдов', '21', 4),
+       ('Иван', 'Макаров', '18', 4),
+       ('Сергей', 'Михеев', '18', 4),
+       ('Денис', 'Юрьев', '19', 4),
+       ('Иван', 'Пакшин', '18', 5),
+       ('Кирилл', 'Осокин', '19', 5),
+       ('Даниил', 'Заболотских', '18', 5),
+       ('Александр', 'Шумков', '19', 5),
+       ('Фирдавси', 'Нуров', '18', 5),
+       ('Владимир', 'Ласточкин', '18', 6),
+       ('Даниил', 'Ясновский', '19', 6),
+       ('Александр', 'Мустафин', '18', 6),
+       ('Николай', 'Суманеев', '19', 6),
+       ('Николай', 'Кузнецов', '18', 6),
+       ('Лев', 'Виноградов', '19', 7),
+       ('Анастасия', 'Новикова', '18', 7),
+       ('Даниил', 'Царегородцев', '19', 7),
+       ('Дмитрий', 'Апакаев', '18', 7),
+       ('Андрей', 'Иванов', '20', 7),
+       ('Антон', 'Герасимов', '19', 8),
+       ('Глеб', 'Модин', '18', 8),
+       ('Ильсаф', 'Хасанов', '20', 8),
+       ('Дмитрий', 'Гриничев', '20', 8),
+       ('Дмитрий', 'Андреев', '18', 8),
+       ('Анастасия', 'Куликова', '19', 9),
+       ('Хератхнаяк', 'Нисансала', '24', 9),
+       ('Раджапакша', 'Пубуду', '25', 9),
+       ('Константин', 'Андреев', '18', 9),
+       ('Анастасия', 'Антропова', '19', 9);
+       
+       
+Создаём таблицу группы:
+CREATE TABLE study_group
 (
-    group_id INT AUTO_INCREMENT NOT NULL,
+    group_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(255) NOT NULL,
-    faculty_id VARCHAR(255) NOT NULL,
-    PRIMARY KEY (group_id)
+    faculty_id INT NOT NULL
 ) DEFAULT CHARACTER SET utf8mb4
   COLLATE `utf8mb4_unicode_ci`
   ENGINE = InnoDB
-;
+;    
 
 
-INSERT INTO groups SET name = '1', faculty_id = '1';
-
-INSERT INTO groups SET name = '2', faculty_id = '1';
-
-INSERT INTO groups SET name = '3', faculty_id = '1';
-
-INSERT INTO groups SET name = '4', faculty_id = '2';
-
-INSERT INTO groups SET name = '5', faculty_id = '2';
-
-INSERT INTO groups SET name = '6', faculty_id = '2';
-
-INSERT INTO groups SET name = '7', faculty_id = '3';
-
-INSERT INTO groups SET name = '8', faculty_id = '3';
-
-INSERT INTO groups SET name = '9', faculty_id = '3';
+INSERT INTO study_group(name, faculty_id)
+VALUES ('PS-11', 1),
+       ('PS-12', 1),
+       ('PS-13', 1),
+       ('AI-11', 2),
+       ('AI-12', 2),
+       ('AI-13', 2),
+       ('RS-11', 3),
+       ('RS-12', 3),
+       ('RS-13', 3);
 
 
-CREATE TABLE faculties
+Создаём таблицу факультеты:
+CREATE TABLE faculty
 (
-    faculty_id INT AUTO_INCREMENT NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    PRIMARY KEY(id_faculty)
+    faculty_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255) NOT NULL
 ) DEFAULT CHARACTER SET utf8mb4
   COLLATE `utf8mb4_unicode_ci`
   ENGINE = InnoDB
 ;
 
 
-INSERT INTO faculties name = 'ФИиВТ';
+Заполняем таблицу данными о факультетах:
+INSERT INTO faculty(name)
+VALUES ('ФИиВТ'),
+       ('ЭФ'),
+       ('РТФ');
 
-INSERT INTO faculties name = 'ЭФ';
 
-INSERT INTO faculties name = 'РТФ';
-
-
+Запросы
 (1)
-SELECT * FROM students
+SELECT * FROM student
 WHERE
-    age = '19';    
+    age = 19;    
 
 
 (2)
-SELECT * FROM students
+SELECT * FROM student
 WHERE
-    group_id = '3';   
+    group_id = 3;   
 
 
 (3)
 SELECT
-    students.first_name AS 'First Name',
-    students.last_name AS 'Last Name',
-    students.age AS 'Age'
-FROM groups
-LEFT JOIN faculties ON groups.faculty_id=faculties.faculty_id
-LEFT JOIN students ON students.group_id=groups.group_id
+    s.first_name AS 'First Name',
+    s.last_name AS 'Last Name',
+    s.age AS 'Age'
+FROM study_group g
+LEFT JOIN faculty f ON g.faculty_id = f.faculty_id
+LEFT JOIN student s ON s.group_id = g.group_id
 WHERE
-    faculties.name='ФИиВТ';
+    f.name = 'ФИиВТ';
 
 
 (4)
 SELECT
-    faculties.name AS 'Faculty',
-    groups.name AS 'Group'
-FROM groups
-LEFT JOIN faculties ON groups.faculty_id=faculties.faculty_id
-LEFT JOIN students ON students.group_id=groups.group_id
+    f.name AS 'Faculty',
+    g.name AS 'Group'
+FROM study_group g
+LEFT JOIN faculty f ON g.faculty_id = f.faculty_id
+LEFT JOIN student s ON s.group_id = g.group_id
 WHERE
-    students.id_student='19';
+    s.student_id=  '19';
     
+
+SELECT
+    s.first_name AS 'First Name',
+    s.last_name AS 'Last Name',
+    s.age AS 'Age'
+FROM student s
+LEFT JOIN study_group g ON g.group_id = s.group_id
+WHERE
+    g.name = 'PS-13';    
+
+
+Удаление записи из таблицы
+DELETE FROM study_group
+    WHERE group_id = 2;
+

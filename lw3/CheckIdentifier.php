@@ -1,21 +1,32 @@
 <?php
 header("Content-Type: text/plain");
 
-if (isset($_GET['identifier']))
+function getGETParameter(string $param): ?string
 {
-    die("enter the identifier");
+    return isset($_GET[$param]) ? $_GET[$param] : null;
 }
 
-$checkString = $_GET['identifier'];
+$identifier = getGETParameter('identifier');
 
-if(ctype_digit($checkString[0]))
+if($identifier)
 {
-    die("no, first symbol must be letter");
+    if(ctype_digit($identifier[0]))
+    {
+        echo "идентификатор должен начинаться с буквы!";
+    }
+    else 
+    {
+        if (ctype_alnum($identifier))
+        {
+            echo "да, корректный идентификатор";
+        }
+        else
+        {
+            echo "идентификатор должен содержать только буквы и цифры!";
+        }
+    }  
 }
-
-if(!ctype_alnum($checkString))
+else
 {
-    die("no, only letter and digit");
-}        
-
-echo "Yes, correct identifier";
+    echo "введите идентификатор";
+}

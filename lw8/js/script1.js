@@ -1,4 +1,22 @@
-function Identification(number) {
+function getData(data) {
+  definesTheTypeOfData(data);
+}
+
+function definesTheTypeOfData(data) {
+  switch(typeof data) {
+    case 'number':
+      definesSimplicity(data); 
+      break;
+    case 'object':
+      if (data instanceof Array) {
+        processArray(data);
+        break;
+      }  
+    default:
+      console.log('Введите число или массив чисел!')    
+  }      
+}
+function definesSimplicity(number) {
   let isPrime;
   for (let i = 2; i <= number; i++) {
     isPrime = true;
@@ -8,33 +26,24 @@ function Identification(number) {
         break;
       }  
     }
-  } 
-  result(isPrime, number); 
+  }
+  outputsTheResult(isPrime, number)
 }  
-function result(isPrime, number) {
+
+function outputsTheResult(isPrime, number) {
   if (isPrime) {
     console.log('Число ', number, 'простое.');
   } else {
     console.log('Число', number, ' не простое.');
   }    
-}  
-function isPrimeNumber(value) {
-  if (typeof (value) === 'number') {
-    Identification(value);
-  } else if (value instanceof Array) {
-    if (value.length) {
-      for (let i = 0; i < value.length; i++) {
-        if (typeof (value[i]) !== 'number') {
-          return console.log('Введены некорректные данные(введите числа)');  
-        } else {
-          Identification(value[i]);
-        }        
-      }
+}       
+
+function processArray(data) {
+  for (index = 0; index < data.length; index++) {
+    if (typeof (data[index]) == 'number') {
+      definesSimplicity(data[index]); 
     } else {
-      return console.log('Ваш массив пустой!')
-    }
-  } 
-  else {
-  return console.log('Введите массив или число!')
+      console.log('В массиве есть некорректные символы.');
+    }       
   }
 }

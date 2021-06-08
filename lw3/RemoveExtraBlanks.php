@@ -1,31 +1,40 @@
 <?php
 header("Content-Type: text/plain");
 
-if (!isset($_GET['text']))
+function getGETParameter(string $param): ?string
 {
-    die("set text");
+    return isset($_GET[$param]) ? $_GET[$param] : null;
 }
 
-$checkString = trim($_GET['text']);
-$resultString = "";
-$spaceFlag = false;
+$text = getGETParameter('text');
 
-for ($i = 0; $i < strlen($checkString); $i++)
+if ($text)
 {
-    $char = $checkString[$i];
-    if ($char != " ")
+    $checkString = trim($text);
+    $resultString = "";
+    $spaceFlag = false;
+    
+    for ($i = 0; $i < strlen($checkString); $i++)
     {
-        if ($spaceFlag)
+        $char = $checkString[$i];
+        if ($char != " ")
         {
-            $resultString = "$resultString ";
+            if ($spaceFlag)
+            {
+                $resultString = $resultString . " ";
+            }
+            $resultString = $resultString . $char;
+            $spaceFlag = false;
         }
-        $resultString = "$resultString$char";
-        $spaceFlag = false;
+        else
+        {
+            $spaceFlag = true;
+        }
     }
-    else
-    {
-        $spaceFlag = true;
-    }
+    
+    echo $resultString;
 }
-
-echo $resultString;
+else
+{
+    echo "Введите параметр!";
+}
